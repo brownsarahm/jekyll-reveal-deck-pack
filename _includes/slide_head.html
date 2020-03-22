@@ -1,0 +1,38 @@
+
+	<head>
+		<meta charset="utf-8">
+
+		{% if site.title %}<title>{{ site.title }}</title>{% endif %}
+
+		{% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}
+		{% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="{{site.baseurl}}/{{ site.reveal_path }}css/reveal.css">
+		<link rel="stylesheet" href="{{site.baseurl}}/{{ site.reveal_theme_path }}{{ site.reveal_theme }}" id="theme">
+    {% if site.extra_css %}
+    	{% for css_file in site.extra_css %}
+    		<link rel="stylesheet" href="{{ css_file }}">
+    	{% endfor %}
+    {% endif %}
+
+		<!-- For syntax highlighting -->
+		{% if site.highlight_style_sheet %}
+			{% assign highlight_style_sheet = site.highlight_style_sheet %}
+		{% else %}
+			{% capture highlight_style_sheet %}{{site.baseurl}}/{{ site.reveal_path }}lib/css/zenburn.css {% endcapture %}
+		{% endif %}
+		<link rel="stylesheet" href="{{ highlight_style_sheet }}">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="{{site.baseurl}}/{{ site.reveal_path }}css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="{{ site.reveal_path }}lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>

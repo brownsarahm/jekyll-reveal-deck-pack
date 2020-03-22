@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{% assign slides = site.documents | where:"collection", page.slideset%}
+{% for slide in slides %}
+  <hr id='{{ slide.name }}'>
+
+  <section class='lead'>
+
+    <div class ='handoutslide'>  {{ slide.content |markdownify }} </div>
+
+    {% if slide.notes %}
+      <div class='note'> {{slide.notes |markdownify}} </div>
+    {% endif %}
+
+  </section>
+{% endfor %}
+
+  <hr>

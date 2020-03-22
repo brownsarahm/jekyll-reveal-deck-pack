@@ -1,0 +1,30 @@
+
+<!doctype html>
+<html lang="en">
+
+{% include slide_head.html %}
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+        {% assign slides = site.documents | where:"collection", page.slideset%}
+    				{% for slide in slides %}
+      				<section >
+      					{{ slide.content | markdownify}}
+      				</section>
+
+      				<aside class="notes">
+      					{{ slide.notes | markdownify}}
+      				</aside>
+            {% endfor %}
+
+			</div>
+
+		</div>
+
+		<!-- <script src="{{ site.reveal_path }}lib/js/head.min.js"></script> -->
+		{% include reveal_foot.html %}
+	</body>
+</html>
