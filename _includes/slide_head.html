@@ -23,7 +23,7 @@
 		{% if site.highlight_style_sheet %}
 			{% assign highlight_style_sheet = site.highlight_style_sheet %}
 		{% else %}
-			{% capture highlight_style_sheet %}{{site.baseurl}}/{{ site.reveal_path }}lib/css/zenburn.css {% endcapture %}
+			{% capture highlight_style_sheet %}{{site.baseurl}}/assets/lib/css/zenburn.css {% endcapture %}
 		{% endif %}
 		<link rel="stylesheet" href="{{ highlight_style_sheet }}">
 
