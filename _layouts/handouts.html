@@ -2,7 +2,9 @@
 layout: default
 ---
 
-{% assign slides = site.documents | where:"collection", page.slideset%}
+{{ content }}
+
+{% assign slides = site.documents | where:"collection", page.slideset %}
 {% for slide in slides %}
   <hr id='{{ slide.name }}'>
 
