@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.name          = "jekyll-reveal-deck-pack"
   spec.version       = "0.1.0"
   spec.authors       = [""]
-  spec.email         = ["sarahmbrown@berkeley.edu"]
+  spec.email         = ["smb@sarahmbrown.org"]
 
   spec.summary       = "TODO: Write a short summary, because Rubygems requires one."
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
